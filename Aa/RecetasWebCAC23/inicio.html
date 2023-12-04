@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookingology</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/assets/favicon.png" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/assets/style.css">
+
+    <!-- Custom JS -->
+    <script src="/static/assets/general-script.js" defer></script>
+
+    <!-- Validación JS -->
+    <script src="/static/assets/validacion-index.js" defer></script>
+
+    <!-- Owl JS -->
+    <link rel="stylesheet" href="static/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/assets/owlcarousel/assets/owl.theme.default.min.css">
+</head>
+
+<body>
+    <header class="sticky">
+        <nav>
+            <div class="navheader">
+                <div class="contenedor-items-menu">
+                    <div class="icono-cookingology">
+                        <a href="inicio.html"><img src="/static/assets/img/icono-cookingology.png" alt="" style="height: 80px;"></a>
+                    </div>
+                    <ul class="lista-navbar-menu-btns">
+                        <li class="navbar-menus"><a href="#">Inicio</a></li>
+                        <li class="navbar-menus"><a href="#">Tienda</a></li>
+                        <li class="navbar-menus"><a href="#">Tips & consejos</a></li>
+                        <li class="navbar-menus"><a href="#">Recetas</a>
+                            <div class="contenedor-ul-navbar-dpdown-menus">
+                                <ul class="ul-navbar-menus">
+                                    <h4>Comidas del día</h4>
+                                    <li class="recetas-items-dropdown" style="margin-top: 0px;"><a href="#">Almuerzo</a>
+                                    </li>
+                                    <li class="recetas-items-dropdown"><a href="#">Cena</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">Postres</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">Bebidas y cocteles</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">Desayuno y merienda</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">Ver todas las categorías</a></li>
+                                </ul>
+                                <ul class="ul-navbar-menus">
+                                    <h4>Recetas por ingredientes</h4>
+                                    <li class="recetas-items-dropdown" style="margin-top: 0px;"><a href="#">Pollo</a>
+                                    </li>
+                                    <li class="recetas-items-dropdown"><a href="/buscar-receta-categoria?categoria=Carne">Carne vacuna</a></li>
+                                    <li class="recetas-items-dropdown"><a href="/buscar-receta-categoria?categoria=Cerdo">Carne de cerdo</a></li>
+                                    <li class="recetas-items-dropdown"><a href="/buscar-receta-categoria?categoria=Vegetarianas">Vegetarianas</a></li>
+                                    <li class="recetas-items-dropdown"><a href="/buscar-receta-categoria?categoria=Pizzas+%2F+Tartas">Pastas y harinas</a></li>
+                                    <li class="recetas-items-dropdown"><a href="/buscar-receta-categoria?categoria=Helados">Helados</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">COMPLICACION EN EL BACK Ver todos los ingredientes</a></li>
+                                </ul>
+                                <ul class="ul-navbar-menus">
+                                    <h4>Celebraciones y eventos</h4>
+                                    <li class="recetas-items-dropdown" style="margin-top: 0px;"><a href="#">Navideñas</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">Pascúa</a></li>
+                                </ul>
+                                <ul class="ul-navbar-menus" style="border: 0;">
+                                    <h4>Recetas subidas</h4>
+                                    <li class="recetas-items-dropdown" style="margin-top: 0px;"><a href="#">Recetas de la comunidad</a></li>
+                                    <li class="recetas-items-dropdown"><a href="#">Recetas oficiales</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="navbar-menus"><a href="?=formulariosweb/SubirReceta.html">Subir receta</a></li>
+                        <li class="navbar-menus"><a href="#"><i class="fa-solid fa-circle-user"></i></a>
+                            <div class="contenedor-ul-navbar-dpdown-menus form-dropdown">
+                                <ul class="ul-navbar-menus">
+                                    <li><button id="mostrar-modal-login">Iniciar sesión</button></li>
+                                    <li><button id="mostrar-modal-signup">Registrarse</button></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <div class="contenedor-modal-popup login-popup">
+                <div class="cerrar-btn">&times;</div>
+                <div class="modal-popup">
+                    <div class="modal-title-main">
+                        <img src="/static/assets/img/icono-cookingology.png" alt="">
+                        <span style="display: flex; flex-direction: column; align-items: center;">
+                            <h1 style="font-size: 2em;">Inicio de sesión</h1>
+                            <div class="social-container">
+                                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </span>
+                        <span style="font-size: 14px;">o usa tu cuenta creada</span>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="js-loginFormModal" style="width: 100%;">
+                            <div>
+                                <input type="text" id="username-modal" name="username" maxlength="50"
+                                    placeholder="Ingrese su nombre de usuario o mail">
+                                <span class="error-text-modal"></span>
+                            </div>
+                            <div>
+                                <input type="password" id="password-modal" name="password"
+                                    placeholder="Ingrese su contraseña (más de 6 caracteres)">
+                                <span class="error-text-modal"></span>
+                            </div>
+                            <div class="login-acceso-recordarme">
+                                <input type="checkbox" name="remember-me" id="checkRememberMe" checked />
+                                <label for="remember-me" class="remember-me-text" style="font-size: 14px;">Recórdarme en este equipo</label>
+                            </div>
+                            <div class="modal-body-down">
+                                <input type="submit" value="Iniciar sesión" class="btn-submit">
+                                <span style="font-size: 14px;">¿Nuevo en el sitio? <a href="#" id="registrar">Crea
+                                        una cuenta</a></span>
+                                <div class="elementos-form">
+                                    <span style="font-size: 14px;"><a href="#">¿Olvido su nombre de usuario o contraseña?</a></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedor-modal-popup signup-popup">
+                <div class="cerrar-btn">&times;</div>
+                <div class="modal-popup">
+                    <div class="modal-title-main">
+                        <img src="/static/assets/img/icono-cookingology.png" alt="">
+                        <span style="display: flex; flex-direction: column; align-items: center;">
+                            <h1 style="font-size: 2em;">Crea una cuenta</h1>
+                            <div class="social-container">
+                                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </span>
+                        <span style="font-size: 14px;">o utiliza tu email para el registro</span>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="js-loginFormModal" style="width: 100%;">
+                            <div>
+                                <input type="text" id="username-modal" name="username" maxlength="50"
+                                    placeholder="Ingresa tu email">
+                                <span class="error-text-modal"></span>
+                            </div>
+                            <div>
+                                <input type="password" id="password-modal" name="password"
+                                    placeholder="Crea tu contraseña (más de 6 caracteres)">
+                                <span class="error-text-modal"></span>
+                            </div>
+                            <div>
+                                <input type="password" id="password-confirmn" name="password-confirmn" placeholder="Confirma tu contraseña (más de 6 caracteres)">
+                                <span class="error-text-modal"></span>
+                            </div>
+                            <div class="modal-body-down">
+                                <input type="submit" value="Iniciar sesión" class="btn-submit">
+                                <span style="font-size: 14px;">¿Ya tenes una cuenta en el sitio? <a href="#" id="iniciar-sesion"> Inicia sesión</a></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section style="position: relative; background: #eee6e6; padding-bottom: 30px;">
+            <article class="hero-article" style="padding: 30px 0px;">
+                <div class="contenedor-compo-hero">
+                    <ul class="contenedor-lista-hero">
+                        <li class="lista-items-hero"><a href="#">Nuestos Chefs</a></li>
+                        <li class="lista-items-hero"><a href="#">Blog de cocina y noticias</a></li>
+                        <li class="lista-items-hero"><a href="#">Contacto</a></li>
+                        <li class="lista-items-hero"><a href="#">Acerca de nosotros</a></li>
+                    </ul>
+                    <h1>Cookingology</h1>
+                    <h2>Where homemade recipes unite & palates delight!</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat beatae provident consequatur
+                        officiis tenetur quis alias consequuntur deleniti eaque id excepturi, debitis fugiat unde ab!
+                    </p>
+                    <div class="contenedor-buscador-hero">
+                        <form class="d-flex" role="search" method="get" action="/buscar-receta-ingredientes">
+                            <input class="form-control me-2" type="search" placeholder="Buscar recetas en el sitio"
+                                aria-label="Buscar" name="Ingredientes" required>
+                            <button class="btn btn-outline-success" type="submit"><i
+                                    class="fa-solid fa-magnifying-glass"
+                                    style="font-size: 18px !important;"></i></button>
+                            <a href="#"><i class="fa-solid fa-bars"></i></a>
+                        </form>
+                    </div>
+                </div>
+                
+
+            </article>
+        </section>
+        
+        <section>
+            <article style="padding: 30px 0px;">
+                <div class="container container-title">
+                    <div class="row">
+                        <div class="section-block-title">
+                            <h3>Recetas elegidas por nuestros chefs</h3>
+                            <h4>Recetas exclusivas tanto de chefs como de nuestros usuarios</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-container">
+                    <div class="owl-carousel owl-theme" id="carrusel-1">
+                        <!-- {{carrusel}} -->
+                        <div class="item">
+                            <a href="" class="a-hover">
+                                <div class="overlay-receta overlay-hover"></div>
+                                <div class="receta-item">
+                                    <div class="etiqueta-categoria">
+                                        <a href="#" style="background-color: #8b84e5;" class="btn-etiqueta slide">
+                                            <i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i>
+                                            <span class="etiqueta-titulo">Pollo</span>
+                                        </a>
+                                    </div>
+                                    <div class="titulo-receta">
+                                        <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                    </div>
+                                    <div class="fecha-tiempo">
+                                        <span>Junio 13, 2023</span>
+                                        <div class="separador-dot"></div>
+                                        <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>30 min</span>
+                                    </div>
+                                </div>
+                                <img src="static/imagenes/image10.jpg" alt="">
+                            </a>
+                        </div>
+                        
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: #5b8559;" class="btn-etiqueta slide-large"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Vegetariana</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Junio 13, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>45 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image9.jpg" alt="">
+                        </a></div>
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: #84a6e5;" class="btn-etiqueta slide"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Fácil</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Octube 22, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>15 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image8.jpg" alt="">
+                        </a></div>
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: #e5a484;" class="btn-etiqueta slide"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Pasta</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Mayo 12, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>60 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image7.jpg" alt="">
+                        </a></div>
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: #e584b9;" class="btn-etiqueta slide"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Bebidas</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Enero 21, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>50 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image6.jpg" alt="">
+                        </a></div>
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: rgb(229, 132, 132);" class="btn-etiqueta slide"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Navideña</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Marzo 3, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>20 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image5.jpg" alt="">
+                        </a></div>
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: #8b84e5;" class="btn-etiqueta slide"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Pollo</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Noviembre 10, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>30 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image4.jpg" alt="">
+                        </a></div>
+                        <div class="item"><a href="" class="a-hover">
+                            <div class="overlay-receta"></div>
+                            <div class="receta-item">
+                                <div class="etiqueta-categoria">
+                                    <a href="#" style="background-color: rgb(229, 132, 189);" class="btn-etiqueta slide"><i class="fa fa-tag cat-dot" style="margin-right: 10px;"></i><span class="etiqueta-titulo">Cerdo</span></a>
+                                </div>
+                                <div class="titulo-receta">
+                                    <h3><a href="">Taiwanese Popcorn Chicken</a></h3>
+                                </div>
+                                <div class="fecha-tiempo">
+                                    <span>Junio 5, 2023</span>
+                                    <div class="separador-dot"></div>
+                                    <span><i class="fa fa-clock-o" aria-hidden="true" style="margin-right: 5px;"></i>30 min</span>
+                                </div>
+                            </div>
+                            <img src="static/imagenes/image3.jpg" alt="">
+                        </a></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-comun" style="background: #eee6e6; padding: 30px 0px;">
+                <div>
+                    <div class="container container-title">
+                        <div class="row">
+                            <div class="section-block-title">
+                                <h3>Recetas más populares esta semana</h3>
+                                <h4>Recetas exclusivas de nuestros usuarios</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-grid-recetas-populares">
+                        <div class="receta-mas-popular"></div>
+                        <div class="receta-2"></div>
+                        <div class="receta-3"></div>
+                        <div class="receta-4"></div>
+                        <div class="receta-5"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-comun" style="padding: 30px 0;">
+                <div>
+                    <div class="container container-title">
+                        <div class="row">
+                            <div class="section-block-title">
+                                <h3>Categorías más populares</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <h3></h3>
+                    <div class="contenedor-grid-categorias-cuadrado">
+                        <div class="categoria-1"></div>
+                        <div class="categoria-2"></div>
+                        <div class="categoria-3"></div>
+                        <div class="categoria-4"></div>
+                    </div>
+                    <div class="contenedor-grid-categorias-circulos">
+                        <div class="categoria-5"></div>
+                        <div class="categoria-6"></div>
+                        <div class="categoria-7"></div>
+                        <div class="categoria-8"></div>
+                        <div class="categoria-9"></div>
+                        <div class="categoria-10"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section style="padding: 0;">
+            <article class="article-comun" style="background: #eee6e6; padding: 30px 0px;">
+                <div class="container container-title">
+                    <div class="row">
+                        <div class="section-block-title">
+                            <h3>Tienda</h3>
+                            <h4>¡Nuestros productos más populares!</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carrusel-2" class="owl-carousel">
+                    <div class="item-tienda">
+                        <a href="">
+                            <div class="contenedor-tienda-item-desc">
+                                <div class="titulo-item-tienda">
+                                    <h3>Set 5 Bowls Acero Inoxidable</h3>
+                                </div>
+                                <div class="precio-item-tienda">
+                                    <span>$4500</span>
+                                </div>
+                            </div>
+                            <img src="/static/imagenes/item-tienda-1.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="item-tienda">
+                        <a href="">
+                            <div class="contenedor-tienda-item-desc">
+                                <div class="titulo-item-tienda">
+                                    <h3>Rallador cocinero</h3>
+                                </div>
+                                <div class="precio-item-tienda">
+                                    <span>$1800</span>
+                                </div>
+                            </div>
+                            <img src="/static/imagenes/item-tienda-2.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="item-tienda">
+                        <a href="">
+                            <div class="contenedor-tienda-item-desc">
+                                <div class="titulo-item-tienda">
+                                    <h3>Organizador de cubiertos</h3>
+                                </div>
+                                <div class="precio-item-tienda">
+                                    <span>$3400</span>
+                                </div>
+                            </div>
+                            <img src="/static/imagenes/item-tienda-3.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="item-tienda">
+                        <a href="">
+                            <div class="contenedor-tienda-item-desc">
+                                <div class="titulo-item-tienda">
+                                    <h3>Set X 4 Utensilios Acero Inox</h3>
+                                </div>
+                                <div class="precio-item-tienda">
+                                    <span>$7500</span>
+                                </div>
+                            </div>
+                            <img src="/static/imagenes/item-tienda-4.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="item-tienda">
+                        <a href="">
+                            <div class="contenedor-tienda-item-desc">
+                                <div class="titulo-item-tienda">
+                                    <h3>	
+                                        Muffinera 6 porciones</h3>
+                                </div>
+                                <div class="precio-item-tienda">
+                                    <span>$3200</span>
+                                </div>
+                            </div>
+                            <img src="/static/imagenes/item-tienda-5.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="item-tienda">
+                        <a href="">
+                            <div class="contenedor-tienda-item-desc">
+                                <div class="titulo-item-tienda">
+                                    <h3>Set De Pinzas Para Cocina (Rojo)</h3>
+                                </div>
+                                <div class="precio-item-tienda">
+                                    <span>$4900</span>
+                                </div>
+                            </div>
+                            <img src="/static/imagenes/item-tienda-6.webp" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <section>
+            <article style="padding: 30px 0px;">
+                <div class="contenedor-newsletter">
+                    <div class="newsletter-index">
+                        <div class="row-newsletter">
+                            <div class="col-1">
+                                <i class="fa-solid fa-at" style="font-size: 40px;"></i>
+                                <div class="suscribirse-newsletter">
+                                    <h4>Suscríbete a nuestro diario</h4>
+                                    <p>¡Te mantendremos al tanto de con nuevas recetas y actualizaciones!</p>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <form action="#">
+                                    <input type="email" name="email" placeholder="Por favor ingresa tu e-mail" required>
+                                    <button type="submit" class="btn-submit"
+                                        style="margin-left: 15px;">Suscríbete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor-columnas-footer">
+            <div class="columna-1"></div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap bundle JS & Font Awesome & JQuery & Owl-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/4e89c87464.js" crossorigin="anonymous"></script>
+    <script src="static/assets/jquery.min.js"></script>
+    <script src="static/assets/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

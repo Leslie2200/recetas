@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas Carga de Datos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <main>
+
+        <h1>Nueva receta</h1>
+
+        <div class="formulario1">
+            <form method="post" action="/registro-receta">
+
+                <p>Nombre de la receta<input type="text" name="NombreReceta" required></p>
+                <p>Instrucciones<input type="text" name="Receta" required></p>
+                <p>Porciones<input type="number" name="Porciones" required></p>
+                <p class="tareafutura">es neceario que se verifique que el número sea entero</p>
+                <p>url de la imágen<input type="text" name="urlImagen" required></p>
+                <p>Es probable que este campo se deba eliminar</p>
+                <p>Tiempo de cocción<input type="number" name="TiempoMin" required></p>
+                <p class="tareafutura">es neceario que se verifique que el número sea entero</p>
+                <p>Usuario<input type="text" name="nombreUsuario" required></p>
+                <p class="tareafutura">Esto deberíamos de poder tomarlo desde algún otro punto, luego de iniciada la seción.</p>
+                <p>id Categoria<input type="number" name="idCategoria" required></p>
+                <p class="tareafutura">generar una consulta para traer los nombres de las categorías y una función que a partir de la categoría
+                    retorne su id</p>
+                <p>dificultad<input type="" name="dificultad" required></p>
+                <p class="tareafutura">traer los datos de dificultad en una lista desplegable</p>
+
+                <button type="submit">Dale</button>
+            </form>
+        </div>
+        
+
+        <h1>Nuevo Usuario</h1>
+
+            <form method="post" action="/registro-usuario" class="formulario" id="formulario">
+                
+                <!--USUARIO-->
+            
+                <div class="formulario__grupo" id="grupo__usuario">
+                    <label for="Usuario" class="formulario__label">Usuario</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="Usuario" id="Usuario" placeholder="Juan2000">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 10 digitos y solo puede contener numeros, letras y guion bajo</p>
+                </div>
+
+                <!--NOMBRE-->
+
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="Nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="Nombre" id="Nombre" placeholder="Juan" required>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">El nombre solo puede contener letras</p>
+                </div>
+
+                <!--APELLIDO-->
+
+                <div class="formulario__grupo" id="grupo__apellido">
+                    <label for="Apellido" class="formulario__label">Apellido</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="Apellido" id="Apellido" placeholder="Alvarez" required>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">El apellido solo puede contener letras</p>
+                </div>
+
+                
+                <!--CONTRASEÑA-->
+
+                <div class="formulario__grupo" id="grupo__contrasena">
+                    <label for="Contrasena" class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="Contrasena" id="Contrasena" required>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                </div>
+
+                <!--CONTRASEÑA 2-->
+
+                <div class="formulario__grupo" id="grupo__contrasena2">
+                    <label for="Contrasena2" class="formulario__label">Repetir Contraseña</label>
+                    <div class="formulario__grupo-input">
+                        <input type="password" class="formulario__input" name="Contrasena2" id="Contrasena2">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+                </div>
+
+                <!--MAIL-->
+
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correoElectronico" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correoElectronico" id="correoElectronico" placeholder="correo@correo.com" required>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo solo puede contener numeros, letras, puntos y guion bajo</p>
+                </div>
+
+                <!--TELEFONO-->
+
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="Telefono" class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="Telefono" id="Telefono" placeholder="1189896543">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <p class="formulario__input-error">El teléfono solo puede contener numeros y el máximo son 1 dígitos</p>
+                </div>
+
+
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor completar correctamente el formulario. </p>
+                </div>
+
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" class="formulario__btn">Enviar</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                </div>
+                    
+        </form>  
+    </main>
+
+    <script src="validacion.js"></script>
+    <script src="https://kit.fontawesome.com/497db39c9f.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
